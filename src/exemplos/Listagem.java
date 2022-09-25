@@ -5,8 +5,8 @@
         public static void main(String[] args) throws SQLException {
 
             Connection c = new ConnectFatory().CriarConexao();
-            Statement stm = c.createStatement();
-            stm.execute("select * from pessoa");
+            PreparedStatement stm = c.prepareStatement("select * from anime");
+            stm.execute();
             ResultSet rst = stm.getResultSet();
             while (rst.next()){
               String  nome = rst.getString("nome");

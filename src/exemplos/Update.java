@@ -10,7 +10,7 @@ public class Update {
 
      Connection   ConnectFatory = new ConnectFatory().CriarConexao();
         Statement stmt = ConnectFatory.createStatement();
-        stmt.execute("update anime set nome = 'pedro'where nome = 'naruto'");
+        stmt.execute("update anime set nome = 'pedro'where nome = 'marta'");
         stmt.close();
     }
 

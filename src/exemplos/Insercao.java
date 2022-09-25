@@ -1,16 +1,21 @@
 package exemplos;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 
 public class Insercao {
 
+
     public static void main(String[] args) throws SQLException {
 
+        String nome = "joana";
         Connection ConnectFatory = new ConnectFatory().CriarConexao();
-        Statement stmt= ConnectFatory.createStatement();
-        stmt.execute("insert into pessoa (nome) values('marta')");
+        PreparedStatement stmt= ConnectFatory.prepareStatement("insert into anime (nome) values(?)");
+        stmt.setString(1,nome);
+        stmt.execute();
+
         stmt.close();
 
     }
